@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --blue: #215BA8;
+    --light-100: #fff;
+    --light-50: #E9F893;
+    --dark-10: #D9D9D9;
+    --dark-20: #737373;
+    --dark-30: #545454;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    max-width: 100vw;
+    font-size: 1.6rem;
+}
+
+/* Estilização do Header */
+header {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--light-100);
+    padding: 1rem 2rem;
+}
+
+.header-top,
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.log {
+    font-size: 2rem;
+}
+
+.logo,
+.welcome {
+    flex: 1;
+}
+
+.logo a {
+    color: var(--light-100);
+    align-items: flex-end;
+    font-weight: bold;
+}
+
+.header-top form {
+    flex: 2;
+    margin-right: 10rem;
+}
+
+input[name="search"],
+.bi-search {
+    color: var(--blue);
+    font-size: 1.6rem;
+}
+
+input[name="search"]::placeholder {
+    color: #215BA8;
+}
+
+input[name="search"] {
+    width: 100%;
+    border: 0;
+    outline: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+}
+
+.bi-search {
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+}
+
+.welcome {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.welcome-text-link {
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.welcome-link a {
+    font-size: 1.2rem;
+    color: var(--light-100);
+    transition: all .2s ease-in-out;
+}
+
+.welcome-link a:hover {
+    color: var(--light-50);
+}
+
+.welcome-user-photo i {
+    font-size: 4rem;
+}
+
+.user-location,
+.icons-favorite-bag {
+    flex: 1;
+}
+
+nav {
+    flex: 3;
+}
+
+.navbar {
+    margin-top: 2rem;
+}
+
+.bi-geo-alt {
+    font-size: 2rem;
+    color: var(--light-50);
+}
+
+.user-location input {
+    background-color: transparent;
+    font-size: 1.4rem;
+    color: var(--light-50);
+    border: 0;
+    outline: none;
+    padding: .5rem;
+}
+
+.user-location input::placeholder {
+    font-size: 1.4rem;
+    color: var(--light-50);
+}
+
+.navbar nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul a {
+    color: var(--light-100);
+    font-size: 1.6rem;
+}
+
+nav ul a:hover {
+    color: var(--light-50);
+    transition: all .2s ease-in-out;
+}
+
+/* Estilos para o menu */
+.menu {
+    display: flex;
+    align-items: flex-end;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--light-100);
+}
+
+.menu a:hover {
+    color: var(--light-50);
+}
+
+/* Estilos para o menu suspenso (dropdown) */
+.dropdown {
+    background: #215BA8;
+    position: relative;
+}
+
+.dropbtn {
+    color: var(--light-100);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#215BA8;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Mostrar o menu suspenso ao passar o mouse sobre o botão */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Ícone de menu para dispositivos móveis */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--light-100);
+}
+
+/* Mostrar o ícone de menu somente em telas menores */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Empilhar itens verticalmente */
+        align-items: flex-start;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu ul {
+        display: none; /* Ocultar o menu principal */
+    }
+
+    .menu.active ul {
+        display: flex; /* Mostrar o menu principal quando o menu é ativado */
+        flex-direction: column;
+        background-color: var(--blue);
+        position: absolute;
+        top: 3.6rem;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 1;
+    }
+}
+
+/* Estilização do Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--blue);
+    padding: 1rem 2rem;
+    z-index: 1; /* Opcional, se necessário */
+}
+
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .logo,
+footer .social-medias {
+    flex: 1;
+}
+
+footer nav {
+    flex: 2;
+}
+
+.footer-top nav ul {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 5rem; */
+
+}
+
+footer nav ul a {
+    color: var(--light-100);
+    font-size: 1.6rem;
+}
+
+.social-medias {
+    display: flex;
+    justify-content: end;
+}
+
+.social-medias a {
+    color: var(--light-100);
+    font-size: 2.2rem;
+    margin-right: 1.2rem;
+    transition: all .2s ease-in-out;
+}
+
+.social-medias a:hover {
+    color: var(--light-50);
+}
+
+.footer-bottom {
+    text-align: end;
+    color: var(--light-50);
+    font-size: 1.4rem;
+    margin: 2rem 0;
+}
+
+.footer-bottom .copy {
+    margin-bottom: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    html {
+        font-size: 60%;
+    }
+
+    .header-top form,
+    .navbar nav,
+
+    header,
+    footer {
+        padding: 1rem;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu.active ul {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--blue);
+        position: absolute;
+        top: 3.6rem;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 426px) {
+    html {
+        font-size: 55%;
+    }
+
+    header,
+    footer {
+        padding: .5rem;
+    }
+}

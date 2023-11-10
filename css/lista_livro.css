@@ -1,0 +1,75 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+h4 {
+  color: rgba(0, 0, 0, 0.578);
+}
+
+.item {
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 200px;
+  min-width: 200px;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, max-width 0.3s, min-width 0.3s, background-color 0.3s;
+  overflow: hidden; /* Evita que a borda se sobreponha ao aumentar o tamanho */
+}
+
+.item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 205px;
+  min-width: 205px;
+  background-color: #ebebeb;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.button {
+  padding: 7px 15px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.download-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.read-more-button {
+  background-color: #009966;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.read-more-button:hover {
+  background-color: #007855;
+}
+
+.item img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+  height: auto;
+}
+
+.item h4 {
+  margin: 10px 0;
+  max-width: 200px; /* Defina o tamanho máximo desejado */
+  word-wrap: break-word;
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona reticências para indicar que o texto foi truncado */
+}

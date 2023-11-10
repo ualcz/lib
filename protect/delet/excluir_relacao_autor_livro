@@ -1,0 +1,30 @@
+<?php
+include('../db.php');
+
+// Verificar se os parâmetros foram passados na URL
+if (isset($_GET['autor_id']) && isset($_GET['livro_id'])) {
+    // Recuperar os parâmetros da URL
+    $autor_id = $_GET['autor_id'];
+    $livro_id = $_GET['livro_id'];
+
+    // Excluir a relação autor-livro
+    $sqlExcluir = "DELETE FROM autor_livro WHERE autor_id = '$autor_id' AND livro_id = '$livro_id'";
+
+    if ($conn->query($sqlExcluir) === TRUE) {
+        // Redirecionar para a página de edição do livro com uma mensagem de sucesso
+        header("Location:  {$_SERVER['HTTP_REFERER']}?livro_id=$livro_id");
+        exit();
+    } else {
+        // Redirecionar para a página de erro com uma mensagem de erro
+        header("Location: ../pagina_de_erro.php");
+        exit();
+    }
+} else {
+    // Se os parâmetros não foram passados, redirecionar para a página de erro
+    header("Location: ../pagina_de_erro.php");
+    exit();
+}
+
+// Fechar a conexão com o banco de dados
+$conn->close();
+?>
